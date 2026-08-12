@@ -1,3 +1,4 @@
+tareas = []
 while True:
     print("================================")
     print("       GESTOR DE TAREAS")
@@ -14,21 +15,30 @@ while True:
     print()
 
     if opcion == "1":
-        print("Tareas:")
-        # Aquí iría la lógica para mostrar las tareas
+        print("=== TAREAS ===")
+        if len(tareas) == 0:
+            print("No hay tareas pendientes.")
+        else:
+             for i, tarea in enumerate(tareas, start=1):
+                 print(f"{i}. {tarea}")
+        
     elif opcion == "2":
-        tarea = input("Ingrese la descripción de la tarea: ")
-        # Aquí iría la lógica para añadir la tarea
+        tarea = input("Escribe la tarea: ")
+        tareas.append(tarea)
         print(f"Tarea '{tarea}' añadida.")
+
     elif opcion == "3":
         # Aquí iría la lógica para completar la tarea
         print("Tarea completada.")
+
     elif opcion == "4":
         # Aquí iría la lógica para eliminar la tarea
         print("Tarea eliminada.")
+
     elif opcion == "5":
         print("Saliendo del gestor de tareas.")
         break
+    
     else:
         print("Opción no válida.")
 
